@@ -3,6 +3,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
 type Stock {
     isin: String!
+    wkn: String!
     symbol: String!
     stockName: String
     marketRate: Float!
