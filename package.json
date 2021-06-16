@@ -1,0 +1,26 @@
+{
+  "name": "insight-gateway",
+  "version": "1.0.0",
+  "description": "Insight GraphQL Gateway",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larinde/insight-gateway.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "olarinde.ajai@kowegsoftware.co.uk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larinde/insight-gateway/issues"
+  },
+  "homepage": "https://github.com/larinde/insight-gateway#readme",
+  "dependencies": {
+    "apollo-server": "^2.25.1",
+    "graphql": "^15.5.0"
+  }
+}
