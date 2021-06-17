@@ -1,16 +1,25 @@
-const {ApolloServer} = require('apollo-server')
+const { ApolloServer } = require('apollo-server');
+const { ApolloGateway } = require('@apollo/gateway');
 
-const typeDefs = require('./schema-repository')
+const port = 4000;
 
-const mocks = require('./mock-data/stock-data')
 
-const server = new ApolloServer({
-    typeDefs, 
-    mocks
+
+const mocks = require('./mock-data/stock-data');
+
+const gateway = new ApolloGateway({
+    serviceList: [
+        {'name': '', url: 'http://localhost:4001'}
+    ]
 });
 
-server.listen().then(() => {
+const server = new ApolloServer({
+    gateway, 
+    subscriptions: false
+});
+
+server.listen().then((url) => {
     console.log(`
-      starting server
+      Gateway Available at: ${url}
     `);
 });
